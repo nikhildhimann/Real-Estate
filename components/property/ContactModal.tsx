@@ -48,6 +48,7 @@ export function ContactModal({ isOpen, onClose, property }: ContactModalProps) {
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: siteConfig.currency,
+    currencyDisplay: "narrowSymbol",
     maximumFractionDigits: 0,
   }).format(property.price);
 

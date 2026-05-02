@@ -18,10 +18,11 @@ export function slugify(text: string) {
     .replace(/-+$/, "");
 }
 
-export function formatPrice(price: number, currency: string = "USD") {
+export function formatPrice(price: number, currency: string = "AUD") {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: currency,
+    currencyDisplay: "narrowSymbol",
     maximumFractionDigits: 0,
   }).format(price);
 }

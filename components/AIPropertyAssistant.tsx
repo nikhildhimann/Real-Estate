@@ -51,9 +51,9 @@ const interestOptions = [
 ];
 
 const budgetOptions = [
-  { label: "Under ₹50L", value: "under_50l" },
-  { label: "₹50L – ₹1Cr", value: "50l_1cr" },
-  { label: "₹1Cr+", value: "above_1cr" },
+  { label: "Under $500k", value: "under_500k" },
+  { label: "$500k – $1M", value: "500k_1m" },
+  { label: "$1M+", value: "above_1m" },
   { label: "Custom Budget", value: "custom" },
 ];
 
@@ -91,9 +91,9 @@ function isValidPhone(value: string) {
 }
 
 function budgetToQuery(budgetValue: string) {
-  if (budgetValue === "Under ₹50L") return { maxPrice: "5000000" };
-  if (budgetValue === "₹50L – ₹1Cr") return { minPrice: "5000000", maxPrice: "10000000" };
-  if (budgetValue === "₹1Cr+") return { minPrice: "10000000" };
+  if (budgetValue === "Under $500k") return { maxPrice: "500000" };
+  if (budgetValue === "$500k – $1M") return { minPrice: "500000", maxPrice: "1000000" };
+  if (budgetValue === "$1M+") return { minPrice: "1000000" };
   return {};
 }
 
@@ -506,7 +506,7 @@ export default function AIPropertyAssistant() {
                             step === "location"
                               ? "Enter city or area"
                               : step === "customBudget"
-                                ? "Enter budget (e.g. ₹75L)"
+                                ? "Enter budget (e.g. $750k)"
                                 : step === "name"
                                   ? "Enter your name"
                                   : "Enter your phone number"

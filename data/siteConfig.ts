@@ -11,7 +11,7 @@ export const siteConfig = {
   heroTitle: "Find Your Dream Home with Confidence",
   heroSubtitle:
     "Buy, sell, or rent premium properties with expert guidance and verified listings.",
-  currency: "INR",
+  currency: "AUD",
   businessHours: "Mon-Sat 10am to 7pm IST",
   socialLinks: {
     facebook: "https://facebook.com",

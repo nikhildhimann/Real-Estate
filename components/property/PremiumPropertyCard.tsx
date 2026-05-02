@@ -33,6 +33,7 @@ export function PremiumPropertyCard({ property }: PremiumPropertyCardProps) {
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: siteConfig.currency,
+    currencyDisplay: "narrowSymbol",
     maximumFractionDigits: 0,
   }).format(property.price);
   

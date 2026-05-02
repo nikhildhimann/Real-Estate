@@ -17,6 +17,7 @@ export const dynamic = "force-dynamic";
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: siteConfig.currency,
+  currencyDisplay: "narrowSymbol",
   maximumFractionDigits: 0,
 });
 
@@ -186,7 +187,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           </div>
 
           <div className="lg:col-span-4 max-w-full">
-            <aside className="sticky top-28 space-y-6">
+            <aside className="sticky top-24 self-start space-y-6">
               <div className="bg-rose-50 border border-rose-100 rounded-2xl p-4 flex items-center gap-3 text-rose-600 shadow-sm">
                 <div className="p-2 bg-rose-100 rounded-full">
                   <CalendarDays className="w-5 h-5" />
@@ -207,14 +208,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 text-slate-950 shadow-xl shadow-slate-200/70">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-900 to-emerald-400" />
-                <h3 className="text-xl font-bold mb-6">Ready to take the next step?</h3>
-                <AgentCard property={propertyForComponents} agent={agent} />
-                <Button className="mt-4 h-14 w-full rounded-xl bg-emerald-500 text-lg font-bold text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600" asChild>
-                  <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp Agent</a>
-                </Button>
-              </div>
+              <AgentCard property={propertyForComponents} agent={agent} />
             </aside>
           </div>
         </div>
